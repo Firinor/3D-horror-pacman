@@ -13,7 +13,7 @@ public class Battery : MonoBehaviour
     
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindFirstObjectByType<PlayerController>();
         startPos = transform.position;
         
         transform.rotation = Quaternion.Euler(15f, Random.Range(0f, 360f), 15f);

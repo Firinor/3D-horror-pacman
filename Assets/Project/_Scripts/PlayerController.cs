@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Battery[] batteries = FindObjectsOfType<Battery>();
+        Battery[] batteries = FindObjectsByType<Battery>(FindObjectsSortMode.None);
         foreach (Battery battery in batteries)
         {
             if (battery != null)
