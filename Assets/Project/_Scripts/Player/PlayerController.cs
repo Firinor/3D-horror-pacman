@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("currentEnergy: " + currentEnergy);
+                //Debug.Log("currentEnergy: " + currentEnergy);
             }
         }
 
@@ -186,7 +186,6 @@ public class PlayerController : MonoBehaviour
     {
         batteriesCollected++;
         currentEnergy = Mathf.Min(currentEnergy + 5f, maxEnergy);
-        Debug.Log("batteriesCollected +5: " + batteriesCollected);
     }
 
     private void HandleHandAnimations()

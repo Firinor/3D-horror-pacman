@@ -106,7 +106,7 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
-        Debug.Log($"totalBatteriesSpawned {totalBatteriesSpawned}");
+        //Debug.Log($"totalBatteriesSpawned {totalBatteriesSpawned}");
     }
 
     [ContextMenu("2 HideAllLines")]
@@ -118,7 +118,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             lr.enabled = false;
         }
-        Debug.Log($"({allLineRenderers.Length})");
+        //Debug.Log($"({allLineRenderers.Length})");
     }
 
     [ContextMenu("3 ShowAllLines")]
@@ -129,6 +129,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             lr.enabled = true;
         }
-        Debug.Log($"({allLineRenderers.Length}) Scene.");
+        //Debug.Log($"({allLineRenderers.Length}) Scene.");
     }
 }
