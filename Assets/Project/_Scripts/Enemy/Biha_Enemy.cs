@@ -11,7 +11,12 @@ namespace Enemy
         public NavMeshAgent NavMeshAgent;
         
         public List<Transform> patrolPoitns;
+        public Transform patrolParent;
         public int patrolPointIndex = 0;
+        
+        public Material behaviourMat;
+        
+        public EnemyVision Vision;
         
         public float amogusTime = 60f;
         public float amogusTimer;
@@ -44,6 +49,7 @@ namespace Enemy
 
             behaviour = allBehaviours[behaviours.Patrol];
             behaviour.Initialize();
+            behaviourMat.color = Color.green;
         }
 
         public void ToBunishment()
@@ -54,10 +60,13 @@ namespace Enemy
 
         public void ToWarning()
         {
+            NavMeshAgent.isStopped = true;
             NavMeshAgent.speed = runSpeed;
             behaviour = allBehaviours[behaviours.Warning];
+            
+            behaviourMat.color = Color.red;
         }
-
+        
         void Update()
         {
             amogusTimer -= Time.deltaTime;
@@ -65,6 +74,7 @@ namespace Enemy
             {
                 amogusTimer = amogusTime;
                 Transform newPoint = new GameObject("EnemyPatrolPoint" + patrolPoitns.Count).transform;
+                newPoint.SetParent(patrolParent);
                 newPoint.position = Target.position;
                 patrolPoitns.Add(newPoint);
             }
@@ -100,6 +110,12 @@ namespace Enemy
 
         public override void Update()
         {
+            if (Main.Vision.IsCanSeeTarget())
+            {
+                Main.ToWarning();
+                return;
+            }
+            
             if (Main.NavMeshAgent.hasPath) 
                 return;
             
@@ -112,7 +128,6 @@ namespace Enemy
             Main.patrolPointIndex++;
             Main.patrolPointIndex %= Main.patrolPoitns.Count;
             Main.NavMeshAgent.SetDestination(Main.patrolPoitns[Main.patrolPointIndex].position);
-
         }
     }
 
