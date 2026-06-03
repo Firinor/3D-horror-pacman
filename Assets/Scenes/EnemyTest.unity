@@ -231,6 +231,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376342495}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &514615446 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4894993813380373657, guid: 108e36f97df59ee42aa7005d325dcf99, type: 3}
+  m_PrefabInstance: {fileID: 1051646929300876159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &658293908
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,9 +840,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4805396412183057234, guid: 108e36f97df59ee42aa7005d325dcf99, type: 3}
+      propertyPath: Head
+      value: 
+      objectReference: {fileID: 514615446}
+    - target: {fileID: 4805396412183057234, guid: 108e36f97df59ee42aa7005d325dcf99, type: 3}
       propertyPath: Target
       value: 
       objectReference: {fileID: 5924828534527728427}
+    - target: {fileID: 4805396412183057234, guid: 108e36f97df59ee42aa7005d325dcf99, type: 3}
+      propertyPath: runTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805396412183057234, guid: 108e36f97df59ee42aa7005d325dcf99, type: 3}
+      propertyPath: runSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4805396412183057234, guid: 108e36f97df59ee42aa7005d325dcf99, type: 3}
       propertyPath: behaviourMat
       value: 

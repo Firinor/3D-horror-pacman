@@ -16,13 +16,20 @@ namespace Enemy
         
         public Material behaviourMat;
         
+        public Transform Head;
         public EnemyVision Vision;
         
         public float amogusTime = 60f;
         public float amogusTimer;
 
+        public float idleTime = 8f;
+        public float idleTimer;
+        
         public float warningTime = 4f;
         public float warningTimer;
+        
+        public float runTime = 4f;
+        public float runTimer;
         
         public float patrolSpeed = 3f;
         public float runSpeed = 5f;
@@ -47,9 +54,7 @@ namespace Enemy
                 { behaviours.Banishment, new Banishment(this) },
             };
 
-            behaviour = allBehaviours[behaviours.Patrol];
-            behaviour.Initialize();
-            behaviourMat.color = Color.green;
+            ToPatrol();
         }
 
         public void ToBunishment()
@@ -63,8 +68,22 @@ namespace Enemy
             NavMeshAgent.isStopped = true;
             NavMeshAgent.speed = runSpeed;
             behaviour = allBehaviours[behaviours.Warning];
+            behaviour.Initialize();
             
             behaviourMat.color = Color.red;
+        }
+
+        public void ToPatrol()
+        {
+            Head.rotation = Quaternion.identity;
+            
+            NavMeshAgent.isStopped = false;
+            
+            NavMeshAgent.speed = patrolSpeed;
+            behaviour = allBehaviours[behaviours.Patrol];
+            behaviour.Initialize();
+            
+            behaviourMat.color = Color.green;
         }
         
         void Update()
@@ -98,14 +117,11 @@ namespace Enemy
 
     public class Patrol : EnemyBehaviour
     {
-        private float idleTime = 8f;
-        private float idleTimer;
-
         public Patrol(Biha_Enemy owner) : base(owner) { }
 
         public override void Initialize()
         {
-            Main.NavMeshAgent.SetDestination(Main.patrolPoitns[0].position);
+            Main.NavMeshAgent.SetDestination(Main.patrolPoitns[Main.patrolPointIndex].position);
         }
 
         public override void Update()
@@ -119,11 +135,11 @@ namespace Enemy
             if (Main.NavMeshAgent.hasPath) 
                 return;
             
-            idleTimer -= Time.deltaTime;
-            if (idleTimer > 0)
+            Main.idleTimer -= Time.deltaTime;
+            if (Main.idleTimer > 0)
                 return;
 
-            idleTimer = idleTime;
+            Main.idleTimer = Main.idleTime;
 
             Main.patrolPointIndex++;
             Main.patrolPointIndex %= Main.patrolPoitns.Count;
@@ -137,12 +153,27 @@ namespace Enemy
 
         public override void Initialize()
         {
-            
+            Main.warningTimer = Main.warningTime;
+            Main.runTimer = Main.runTime;
         }
         
         public override void Update()
         {
-            Main.transform.LookAt(Main.Target);
+            Vector3 direction = Main.Target.position -  Main.transform.position;
+            direction.y = 0;
+            Main.transform.LookAt( Main.transform.position + direction);
+            Main.Head.LookAt(Main.Target);
+            
+            Main.warningTimer -= Time.deltaTime;
+            if (!(Main.warningTimer <= 0)) 
+                return;
+            
+            Main.NavMeshAgent.isStopped = false;
+            Main.NavMeshAgent.SetDestination(Main.Target.position);
+
+            Main.runTimer -= Time.deltaTime;
+            if(Main.runTimer <= 0)
+                Main.ToPatrol();
         }
     }
 
