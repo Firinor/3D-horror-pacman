@@ -1,22 +1,31 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 4.0f;
+    public float runSpeed = 12.0f;
+    
+    public float sprintRegen = 0.2f;
+    public float sprintPrice = 0.1f;
+    public float sprintRecoveryDelay = 2f;
+    private float sprintRecoveryTimer;
+    
     public float gravity = -9.81f;
 
     [Header("Mouse & Gamepad Look Settings")]
     public Transform cameraTransform;
     public float mouseSensitivity = 2.0f;
     public float gamepadSensitivity = 150.0f;
-    public float upDownRange = 80.0f;
+    public float upDownRange = 89.0f;
 
     [Header("Flashlight Settings")]
     public Light flashlight;
-    public float currentEnergy = 100f;
     public float maxEnergy = 100f;
     public float flashCost = 50f;
     public float flashIntensityMultiplier = 6f;
@@ -24,9 +33,6 @@ public class PlayerController : MonoBehaviour
     [Header("Magnet Settings")]
     public float magnetRadius = 1.5f;
     public float magnetSpeed = 8.0f;
-
-    [Header("Battery Settings")]
-    public int batteriesCollected = 0;
     
     [SerializeField] private Transform handTransform; //flashlight_hand_2
     
@@ -68,8 +74,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 smoothedBobOffset = Vector3.zero;
 
+    public event Action OnBatteryPick;
+    
+    //View
+    public Slider StaminaSlider;
+    public Slider FlashlightSlider;
+    
     void Start()
     {
+        FlashlightSlider.maxValue = maxEnergy;
+        FlashlightSlider.value = maxEnergy;
+        
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -89,9 +104,30 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleMouseLook();
+        HandleStamina();
         HandleMovement();
         HandleGameplayMechanics();
         HandleHandAnimations();
+    }
+
+    private void HandleStamina()
+    {
+        bool sprint = Input.GetButton("Jump");
+
+        if (sprint)
+        {
+            sprintRecoveryTimer = sprintRecoveryDelay;
+            StaminaSlider.value -= sprintPrice * Time.deltaTime;
+        }
+        else
+        {
+            sprintRecoveryTimer -= Time.deltaTime;
+        }
+        
+        if (sprintRecoveryTimer <= 0)
+            StaminaSlider.value += sprintRegen * Time.deltaTime;
+        
+        
     }
 
     private void HandleMouseLook()
@@ -120,7 +156,8 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
-
+        bool sprint = Input.GetButton("Jump");
+        
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
         if (characterController.isGrounded)
@@ -133,7 +170,15 @@ public class PlayerController : MonoBehaviour
         }
 
         move.y = verticalVelocity;
-        characterController.Move(move * moveSpeed * Time.deltaTime);
+
+        float speed = moveSpeed;
+        
+        if (sprint && StaminaSlider.value > 0)
+        {
+            speed = runSpeed;
+        }
+        
+        characterController.Move(move * speed * Time.deltaTime);
     }
 
     private void HandleGameplayMechanics()
@@ -153,9 +198,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && Time.time >= nextAttackTime && !isStrobeAttacking && !isFlashing)
         {
-            if (currentEnergy >= flashCost)
+            if (FlashlightSlider.value >= flashCost)
             {
-                currentEnergy -= flashCost;
+                FlashlightSlider.value -= flashCost;
                 StartCoroutine(PlayStrobeAttack());
             }
             else
@@ -184,8 +229,8 @@ public class PlayerController : MonoBehaviour
 
     public void CollectBattery()
     {
-        batteriesCollected++;
-        currentEnergy = Mathf.Min(currentEnergy + 5f, maxEnergy);
+        FlashlightSlider.value += 5f;
+        OnBatteryPick?.Invoke();
     }
 
     private void HandleHandAnimations()
