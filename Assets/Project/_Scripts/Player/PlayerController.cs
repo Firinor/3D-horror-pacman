@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Flashlight Settings")]
     public Light flashlight;
+    public float flashlightAngle = 120;
     public float maxEnergy = 100f;
     public float flashCost = 50f;
     public Image FlashCostReadyImage;
@@ -119,14 +120,21 @@ public class PlayerController : MonoBehaviour
     private void HandleFlashlight()
     {
         Vector3 target = GetNearestTarget();
-        
-        
-        
+        Vector3 directionToTarget = (target - transform.position).normalized;
+        Vector3 cameraForward = transform.forward;
+        float angle = Vector3.Angle(cameraForward, directionToTarget);
+        float factor = angle / 180f;
+
+        float targetAngle = flashlightAngle / 4;
+        float deltaIn = targetAngle * factor;
+        float deltaOut = targetAngle * 3 * factor;
+        flashlight.innerSpotAngle = Mathf.Lerp(flashlight.innerSpotAngle, targetAngle - deltaIn, Time.deltaTime);
+        flashlight.spotAngle = Mathf.Lerp(flashlight.spotAngle, targetAngle + deltaOut, Time.deltaTime);
     }
 
     private Vector3 GetNearestTarget()
     {
-        Vector3 closest = new Vector3(-999, -999, -999);
+        Vector3 closest = new Vector3(-999, 0, 0);
         float minDistance = float.MaxValue;
     
         for(int i = 0; i < BatteryPool.childCount; i++)
