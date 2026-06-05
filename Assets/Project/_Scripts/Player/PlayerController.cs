@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
 using System.Collections;
-using TMPro;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public Transform BatteryPool;
+    
     [Header("Movement Settings")]
     public float moveSpeed = 4.0f;
     public float runSpeed = 12.0f;
@@ -28,8 +29,9 @@ public class PlayerController : MonoBehaviour
     public Light flashlight;
     public float maxEnergy = 100f;
     public float flashCost = 50f;
-    public float flashIntensityMultiplier = 6f;
-
+    public Image FlashCostReadyImage;
+    private float flashIntensityMultiplierTimer;
+    
     [Header("Magnet Settings")]
     public float magnetRadius = 1.5f;
     public float magnetSpeed = 8.0f;
@@ -75,6 +77,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 smoothedBobOffset = Vector3.zero;
 
     public event Action OnBatteryPick;
+    public event Action OnKeyPick;
+    public event Action OnPortalPick;
     
     //View
     public Slider StaminaSlider;
@@ -84,6 +88,7 @@ public class PlayerController : MonoBehaviour
     {
         FlashlightSlider.maxValue = maxEnergy;
         FlashlightSlider.value = maxEnergy;
+        FlashCostReadyImage.enabled = FlashlightSlider.value >= flashCost;
         
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -104,10 +109,38 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleMouseLook();
+        HandleFlashlight();
         HandleStamina();
         HandleMovement();
         HandleGameplayMechanics();
         HandleHandAnimations();
+    }
+
+    private void HandleFlashlight()
+    {
+        Vector3 target = GetNearestTarget();
+        
+        
+        
+    }
+
+    private Vector3 GetNearestTarget()
+    {
+        Vector3 closest = new Vector3(-999, -999, -999);
+        float minDistance = float.MaxValue;
+    
+        for(int i = 0; i < BatteryPool.childCount; i++)
+        {
+            Transform target = BatteryPool.GetChild(i);
+            float distance = Vector3.Distance(transform.position, target.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = target.position;
+            }
+        }
+    
+        return closest;
     }
 
     private void HandleStamina()
@@ -196,17 +229,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextAttackTime && !isStrobeAttacking && !isFlashing)
+        if (Input.GetButtonDown("Fire1") 
+            && FlashlightSlider.value >= flashCost
+            && Time.time >= nextAttackTime 
+            && !isStrobeAttacking 
+            && !isFlashing)
         {
-            if (FlashlightSlider.value >= flashCost)
-            {
-                FlashlightSlider.value -= flashCost;
-                StartCoroutine(PlayStrobeAttack());
-            }
-            else
-            {
-                //Debug.Log("currentEnergy: " + currentEnergy);
-            }
+            FlashlightSlider.value -= flashCost;
+            
+            FlashCostReadyImage.enabled = FlashlightSlider.value >= flashCost;
+            
+            StartCoroutine(PlayStrobeAttack());
         }
 
         Battery[] batteries = FindObjectsByType<Battery>(FindObjectsSortMode.None);
@@ -227,9 +260,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void CollectBattery()
+    public void CollectBattery(string key)
+    {
+        switch (key)
+        {
+            case "Battery":
+                CollectBattery();
+                break;
+            case "Key":
+                CollectKey();
+                break;
+            default:
+                Debug.LogError("What the key?");
+                break;
+        }
+    }
+
+    private void CollectKey()
+    {
+        OnKeyPick?.Invoke();
+    }
+    private void CollectBattery()
     {
         FlashlightSlider.value += 5f;
+        
+        FlashCostReadyImage.enabled = FlashlightSlider.value >= flashCost;
+        
         OnBatteryPick?.Invoke();
     }
 

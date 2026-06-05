@@ -10,6 +10,8 @@ public class Battery : MonoBehaviour
 
     private PlayerController player;
     private Vector3 startPos;
+
+    public string Key;
     
     void Start()
     {
@@ -44,7 +46,7 @@ public class Battery : MonoBehaviour
         PlayerController pc = other.GetComponent<PlayerController>();
         if (pc != null)
         {
-            pc.CollectBattery();
+            pc.CollectBattery(Key);
             Destroy(gameObject);
         }
     }

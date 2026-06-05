@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -93,8 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9fd34b079dd56b84d89b591f9e56cc46, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 530e7707254ed2a45b8b5a7c4eb51a25, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 10149849}
   - component: {fileID: 10149848}
   - component: {fileID: 10149847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,6 +248,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &10149848
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -417,7 +418,7 @@ GameObject:
   - component: {fileID: 29190196}
   - component: {fileID: 29190195}
   - component: {fileID: 29190194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,6 +455,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &29190195
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -547,7 +549,7 @@ GameObject:
   - component: {fileID: 47909661}
   - component: {fileID: 47909660}
   - component: {fileID: 47909659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,6 +586,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &47909660
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -761,8 +764,11 @@ RectTransform:
   - {fileID: 1878374759}
   - {fileID: 71859124}
   - {fileID: 1179457810}
+  - {fileID: 767529719}
+  - {fileID: 1310644540}
   - {fileID: 124849863}
   - {fileID: 1101432781}
+  - {fileID: 1311096947}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -800,13 +806,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -826,7 +832,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 366656426}
   toggleTransition: 1
   graphic: {fileID: 817035842}
@@ -869,7 +875,7 @@ GameObject:
   - component: {fileID: 73971189}
   - component: {fileID: 73971188}
   - component: {fileID: 73971187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,6 +912,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &73971188
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -999,7 +1006,7 @@ GameObject:
   - component: {fileID: 91054972}
   - component: {fileID: 91054971}
   - component: {fileID: 91054970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,6 +1043,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &91054971
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1129,7 +1137,7 @@ GameObject:
   - component: {fileID: 108341717}
   - component: {fileID: 108341716}
   - component: {fileID: 108341715}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,6 +1174,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &108341716
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1259,7 +1268,7 @@ GameObject:
   - component: {fileID: 109643591}
   - component: {fileID: 109643590}
   - component: {fileID: 109643589}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,6 +1305,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &109643590
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1389,7 +1399,7 @@ GameObject:
   - component: {fileID: 121560509}
   - component: {fileID: 121560508}
   - component: {fileID: 121560507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1426,6 +1436,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &121560508
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1609,7 +1620,7 @@ GameObject:
   - component: {fileID: 135459965}
   - component: {fileID: 135459964}
   - component: {fileID: 135459963}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1646,6 +1657,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &135459964
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1739,7 +1751,7 @@ GameObject:
   - component: {fileID: 140544901}
   - component: {fileID: 140544900}
   - component: {fileID: 140544899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1776,6 +1788,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &140544900
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1869,7 +1882,7 @@ GameObject:
   - component: {fileID: 141555082}
   - component: {fileID: 141555081}
   - component: {fileID: 141555080}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1906,6 +1919,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &141555081
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1999,7 +2013,7 @@ GameObject:
   - component: {fileID: 170562587}
   - component: {fileID: 170562586}
   - component: {fileID: 170562585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2036,6 +2050,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &170562586
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2129,7 +2144,7 @@ GameObject:
   - component: {fileID: 178170338}
   - component: {fileID: 178170337}
   - component: {fileID: 178170336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2166,6 +2181,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &178170337
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2259,7 +2275,7 @@ GameObject:
   - component: {fileID: 187365204}
   - component: {fileID: 187365203}
   - component: {fileID: 187365202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2296,6 +2312,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &187365203
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2389,7 +2406,7 @@ GameObject:
   - component: {fileID: 191819267}
   - component: {fileID: 191819266}
   - component: {fileID: 191819265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2426,6 +2443,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &191819266
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2519,7 +2537,7 @@ GameObject:
   - component: {fileID: 197796307}
   - component: {fileID: 197796306}
   - component: {fileID: 197796305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2556,6 +2574,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &197796306
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2649,7 +2668,7 @@ GameObject:
   - component: {fileID: 205575476}
   - component: {fileID: 205575475}
   - component: {fileID: 205575474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2686,6 +2705,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &205575475
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2779,7 +2799,7 @@ GameObject:
   - component: {fileID: 216709823}
   - component: {fileID: 216709822}
   - component: {fileID: 216709821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2816,6 +2836,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &216709822
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2909,7 +2930,7 @@ GameObject:
   - component: {fileID: 228648974}
   - component: {fileID: 228648973}
   - component: {fileID: 228648972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2946,6 +2967,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &228648973
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3073,7 +3095,7 @@ GameObject:
   - component: {fileID: 233963031}
   - component: {fileID: 233963030}
   - component: {fileID: 233963029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3110,6 +3132,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &233963030
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3203,7 +3226,7 @@ GameObject:
   - component: {fileID: 250699011}
   - component: {fileID: 250699010}
   - component: {fileID: 250699009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3240,6 +3263,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &250699010
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3333,7 +3357,7 @@ GameObject:
   - component: {fileID: 251858223}
   - component: {fileID: 251858222}
   - component: {fileID: 251858221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3370,6 +3394,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &251858222
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3463,7 +3488,7 @@ GameObject:
   - component: {fileID: 255234205}
   - component: {fileID: 255234204}
   - component: {fileID: 255234203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3500,6 +3525,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &255234204
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3580,6 +3606,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255234201}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &271750303 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4624306675900259197, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+  m_PrefabInstance: {fileID: 5924828534527728426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &301351636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,7 +3624,7 @@ GameObject:
   - component: {fileID: 301351640}
   - component: {fileID: 301351639}
   - component: {fileID: 301351638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3630,6 +3661,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &301351639
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3756,7 +3788,7 @@ GameObject:
   - component: {fileID: 306425226}
   - component: {fileID: 306425225}
   - component: {fileID: 306425224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3793,6 +3825,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &306425225
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3922,7 +3955,7 @@ GameObject:
   - component: {fileID: 328298177}
   - component: {fileID: 328298176}
   - component: {fileID: 328298175}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3959,6 +3992,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &328298176
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4052,7 +4086,7 @@ GameObject:
   - component: {fileID: 332040011}
   - component: {fileID: 332040010}
   - component: {fileID: 332040009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4089,6 +4123,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &332040010
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4182,7 +4217,7 @@ GameObject:
   - component: {fileID: 350535159}
   - component: {fileID: 350535158}
   - component: {fileID: 350535157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4219,6 +4254,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &350535158
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4312,7 +4348,7 @@ GameObject:
   - component: {fileID: 353505504}
   - component: {fileID: 353505503}
   - component: {fileID: 353505502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4349,6 +4385,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &353505503
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4429,6 +4466,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353505500}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &357586534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357586535}
+  - component: {fileID: 357586537}
+  - component: {fileID: 357586536}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &357586535
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357586534}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2117430745}
+  m_Father: {fileID: 767529719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -10}
+  m_SizeDelta: {x: 28, y: 28}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &357586536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357586534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &357586537
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357586534}
+  m_CullTransparentMesh: 1
 --- !u!1 &366656423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4661,7 +4774,7 @@ GameObject:
   - component: {fileID: 389330222}
   - component: {fileID: 389330221}
   - component: {fileID: 389330220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4698,6 +4811,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &389330221
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4791,7 +4905,7 @@ GameObject:
   - component: {fileID: 397917907}
   - component: {fileID: 397917906}
   - component: {fileID: 397917905}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4828,6 +4942,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &397917906
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4921,7 +5036,7 @@ GameObject:
   - component: {fileID: 409180577}
   - component: {fileID: 409180576}
   - component: {fileID: 409180575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4958,6 +5073,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &409180576
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5051,7 +5167,7 @@ GameObject:
   - component: {fileID: 415175222}
   - component: {fileID: 415175221}
   - component: {fileID: 415175220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5088,6 +5204,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &415175221
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5320,7 +5437,7 @@ GameObject:
   - component: {fileID: 471397074}
   - component: {fileID: 471397073}
   - component: {fileID: 471397072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5357,6 +5474,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &471397073
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5525,7 +5643,7 @@ GameObject:
   - component: {fileID: 488814222}
   - component: {fileID: 488814221}
   - component: {fileID: 488814220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5562,6 +5680,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &488814221
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5660,7 +5779,7 @@ GameObject:
   - component: {fileID: 522310239}
   - component: {fileID: 522310238}
   - component: {fileID: 522310237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5697,6 +5816,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &522310238
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5790,7 +5910,7 @@ GameObject:
   - component: {fileID: 553814367}
   - component: {fileID: 553814366}
   - component: {fileID: 553814365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5827,6 +5947,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &553814366
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5920,7 +6041,7 @@ GameObject:
   - component: {fileID: 560318293}
   - component: {fileID: 560318292}
   - component: {fileID: 560318291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5957,6 +6078,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &560318292
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6050,7 +6172,7 @@ GameObject:
   - component: {fileID: 579550630}
   - component: {fileID: 579550629}
   - component: {fileID: 579550628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6087,6 +6209,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &579550629
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6255,7 +6378,7 @@ GameObject:
   - component: {fileID: 589488262}
   - component: {fileID: 589488261}
   - component: {fileID: 589488260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6292,6 +6415,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &589488261
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6385,7 +6509,7 @@ GameObject:
   - component: {fileID: 593045545}
   - component: {fileID: 593045544}
   - component: {fileID: 593045543}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6422,6 +6546,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &593045544
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6502,6 +6627,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593045541}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &613902636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613902637}
+  - component: {fileID: 613902639}
+  - component: {fileID: 613902638}
+  m_Layer: 5
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &613902637
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613902636}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1310644540}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 13.400024, y: -0.5}
+  m_SizeDelta: {x: -36.8, y: -3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &613902638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613902636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Go to Portal
+--- !u!222 &613902639
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613902636}
+  m_CullTransparentMesh: 1
 --- !u!1 &615429787
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,7 +6755,13 @@ MonoBehaviour:
   Prefix: 'Battery left: '
   SurviveToggle: {fileID: 71859123}
   BatteryToggle: {fileID: 1179457809}
+  KeyToggle: {fileID: 767529720}
+  PortalToggle: {fileID: 1310644541}
   BatteryCountText: {fileID: 1878374760}
+  MessageText: {fileID: 1311096948}
+  spawnPoints: []
+  KeyPrefab: {fileID: 0}
+  PortalPrefab: {fileID: 0}
 --- !u!1 &631922227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,7 +6775,7 @@ GameObject:
   - component: {fileID: 631922231}
   - component: {fileID: 631922230}
   - component: {fileID: 631922229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6602,6 +6812,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &631922230
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6726,7 +6937,7 @@ GameObject:
   - component: {fileID: 664866488}
   - component: {fileID: 664866487}
   - component: {fileID: 664866486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6763,6 +6974,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &664866487
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6856,7 +7068,7 @@ GameObject:
   - component: {fileID: 671673453}
   - component: {fileID: 671673452}
   - component: {fileID: 671673451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6893,6 +7105,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &671673452
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6986,7 +7199,7 @@ GameObject:
   - component: {fileID: 676140700}
   - component: {fileID: 676140699}
   - component: {fileID: 676140698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7023,6 +7236,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &676140699
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7116,7 +7330,7 @@ GameObject:
   - component: {fileID: 685678315}
   - component: {fileID: 685678314}
   - component: {fileID: 685678313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7153,6 +7367,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &685678314
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7346,6 +7561,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707681185}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &737560830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737560833}
+  - component: {fileID: 737560832}
+  - component: {fileID: 737560831}
+  m_Layer: 5
+  m_Name: FlashCostReadyImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &737560831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737560830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &737560832
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737560830}
+  m_CullTransparentMesh: 1
+--- !u!224 &737560833
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737560830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1101432781}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 0}
+  m_SizeDelta: {x: 36, y: 36}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &750849579
 GameObject:
   m_ObjectHideFlags: 0
@@ -7359,7 +7649,7 @@ GameObject:
   - component: {fileID: 750849583}
   - component: {fileID: 750849582}
   - component: {fileID: 750849581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7396,6 +7686,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &750849582
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7489,7 +7780,7 @@ GameObject:
   - component: {fileID: 755143039}
   - component: {fileID: 755143038}
   - component: {fileID: 755143037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7526,6 +7817,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &755143038
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7640,6 +7932,168 @@ Transform:
   - {fileID: 1952373590}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &767529718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767529719}
+  - component: {fileID: 767529720}
+  m_Layer: 5
+  m_Name: KeyToggle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &767529719
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767529718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.101852454}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 357586535}
+  - {fileID: 1365186526}
+  m_Father: {fileID: 47954972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -130.5}
+  m_SizeDelta: {x: 160, y: 20}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &767529720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767529718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 0
+  m_TargetGraphic: {fileID: 357586536}
+  toggleTransition: 1
+  graphic: {fileID: 2117430746}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_IsOn: 0
+--- !u!1 &785951426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785951427}
+  - component: {fileID: 785951429}
+  - component: {fileID: 785951428}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &785951427
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785951426}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1076751644}
+  m_Father: {fileID: 1310644540}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -10}
+  m_SizeDelta: {x: 28, y: 28}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &785951428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785951426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &785951429
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785951426}
+  m_CullTransparentMesh: 1
 --- !u!1 &812608177
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,7 +8107,7 @@ GameObject:
   - component: {fileID: 812608181}
   - component: {fileID: 812608180}
   - component: {fileID: 812608179}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7690,6 +8144,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &812608180
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7858,7 +8313,7 @@ GameObject:
   - component: {fileID: 846327439}
   - component: {fileID: 846327438}
   - component: {fileID: 846327437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7895,6 +8350,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &846327438
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7988,7 +8444,7 @@ GameObject:
   - component: {fileID: 851165178}
   - component: {fileID: 851165177}
   - component: {fileID: 851165176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8025,6 +8481,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &851165177
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8118,7 +8575,7 @@ GameObject:
   - component: {fileID: 933813466}
   - component: {fileID: 933813465}
   - component: {fileID: 933813464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8155,6 +8612,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &933813465
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8248,7 +8706,7 @@ GameObject:
   - component: {fileID: 940241031}
   - component: {fileID: 940241030}
   - component: {fileID: 940241029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8285,6 +8743,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &940241030
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8378,7 +8837,7 @@ GameObject:
   - component: {fileID: 947348320}
   - component: {fileID: 947348319}
   - component: {fileID: 947348318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8415,6 +8874,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &947348319
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8508,7 +8968,7 @@ GameObject:
   - component: {fileID: 948252605}
   - component: {fileID: 948252604}
   - component: {fileID: 948252603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8545,6 +9005,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &948252604
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8669,7 +9130,7 @@ GameObject:
   - component: {fileID: 972587141}
   - component: {fileID: 972587140}
   - component: {fileID: 972587139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8706,6 +9167,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &972587140
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8799,7 +9261,7 @@ GameObject:
   - component: {fileID: 1000636544}
   - component: {fileID: 1000636543}
   - component: {fileID: 1000636542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8836,6 +9298,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1000636543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8929,7 +9392,7 @@ GameObject:
   - component: {fileID: 1004166888}
   - component: {fileID: 1004166887}
   - component: {fileID: 1004166886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8966,6 +9429,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1004166887
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9059,7 +9523,7 @@ GameObject:
   - component: {fileID: 1010496451}
   - component: {fileID: 1010496450}
   - component: {fileID: 1010496449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9096,6 +9560,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1010496450
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9189,7 +9654,7 @@ GameObject:
   - component: {fileID: 1022156962}
   - component: {fileID: 1022156961}
   - component: {fileID: 1022156960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9226,6 +9691,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1022156961
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9319,7 +9785,7 @@ GameObject:
   - component: {fileID: 1030375157}
   - component: {fileID: 1030375156}
   - component: {fileID: 1030375155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9356,6 +9822,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1030375156
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9449,7 +9916,7 @@ GameObject:
   - component: {fileID: 1054342979}
   - component: {fileID: 1054342978}
   - component: {fileID: 1054342977}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9486,6 +9953,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1054342978
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9579,7 +10047,7 @@ GameObject:
   - component: {fileID: 1059865186}
   - component: {fileID: 1059865185}
   - component: {fileID: 1059865184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9616,6 +10084,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1059865185
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9775,6 +10244,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 303523153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1076751643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076751644}
+  - component: {fileID: 1076751646}
+  - component: {fileID: 1076751645}
+  m_Layer: 5
+  m_Name: Checkmark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1076751644
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076751643}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 785951427}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 28, y: 28}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1076751645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076751643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1076751646
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076751643}
+  m_CullTransparentMesh: 1
 --- !u!1 &1101432780
 GameObject:
   m_ObjectHideFlags: 0
@@ -9807,6 +10351,7 @@ RectTransform:
   - {fileID: 1218590732}
   - {fileID: 1720268884}
   - {fileID: 441613289}
+  - {fileID: 737560833}
   m_Father: {fileID: 47954972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9878,7 +10423,7 @@ GameObject:
   - component: {fileID: 1103995944}
   - component: {fileID: 1103995943}
   - component: {fileID: 1103995942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9915,6 +10460,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1103995943
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10087,7 +10633,7 @@ GameObject:
   - component: {fileID: 1110318850}
   - component: {fileID: 1110318849}
   - component: {fileID: 1110318848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10124,6 +10670,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1110318849
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10217,7 +10764,7 @@ GameObject:
   - component: {fileID: 1127617961}
   - component: {fileID: 1127617960}
   - component: {fileID: 1127617959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10254,6 +10801,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1127617960
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10334,6 +10882,133 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127617957}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1130340581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130340582}
+  - component: {fileID: 1130340584}
+  - component: {fileID: 1130340583}
+  m_Layer: 6
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1130340582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130340581}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0002, y: 0.0001, z: 0.1901}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 271750303}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1130340583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130340581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &1130340584
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130340581}
+  m_Enabled: 1
+  serializedVersion: 12
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2
+  m_Range: 10
+  m_SpotAngle: 120
+  m_InnerSpotAngle: 0
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &1179457808
 GameObject:
   m_ObjectHideFlags: 0
@@ -10364,13 +11039,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -10390,7 +11065,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 18835309}
   toggleTransition: 1
   graphic: {fileID: 588249481}
@@ -10433,7 +11108,7 @@ GameObject:
   - component: {fileID: 1186768100}
   - component: {fileID: 1186768099}
   - component: {fileID: 1186768098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10470,6 +11145,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1186768099
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10563,7 +11239,7 @@ GameObject:
   - component: {fileID: 1190638108}
   - component: {fileID: 1190638107}
   - component: {fileID: 1190638106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10600,6 +11276,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1190638107
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10693,7 +11370,7 @@ GameObject:
   - component: {fileID: 1197888913}
   - component: {fileID: 1197888912}
   - component: {fileID: 1197888911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10730,6 +11407,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1197888912
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10898,7 +11576,7 @@ GameObject:
   - component: {fileID: 1231858733}
   - component: {fileID: 1231858732}
   - component: {fileID: 1231858731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10935,6 +11613,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1231858732
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11028,7 +11707,7 @@ GameObject:
   - component: {fileID: 1258434383}
   - component: {fileID: 1258434382}
   - component: {fileID: 1258434381}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11065,6 +11744,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1258434382
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11220,6 +11900,229 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274307333}
   m_CullTransparentMesh: 1
+--- !u!1 &1310644539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1310644540}
+  - component: {fileID: 1310644541}
+  m_Layer: 5
+  m_Name: PortalToggle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1310644540
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310644539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.101852454}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 785951427}
+  - {fileID: 613902637}
+  m_Father: {fileID: 47954972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -170.5}
+  m_SizeDelta: {x: 160, y: 20}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1310644541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310644539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 0
+  m_TargetGraphic: {fileID: 785951428}
+  toggleTransition: 1
+  graphic: {fileID: 1076751645}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_IsOn: 0
+--- !u!1 &1311096946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311096947}
+  - component: {fileID: 1311096949}
+  - component: {fileID: 1311096948}
+  m_Layer: 5
+  m_Name: MessageText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1311096947
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311096946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 47954972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1311096948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311096946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Key spawned!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 128
+  m_fontSizeBase: 128
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 16
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1311096949
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311096946}
+  m_CullTransparentMesh: 1
 --- !u!1 &1328605799
 GameObject:
   m_ObjectHideFlags: 0
@@ -11264,7 +12167,7 @@ GameObject:
   - component: {fileID: 1342972835}
   - component: {fileID: 1342972834}
   - component: {fileID: 1342972833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11301,6 +12204,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1342972834
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11394,7 +12298,7 @@ GameObject:
   - component: {fileID: 1343971572}
   - component: {fileID: 1343971571}
   - component: {fileID: 1343971570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11431,6 +12335,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1343971571
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11663,6 +12568,85 @@ Transform:
   - {fileID: 108341714}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1365186525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1365186526}
+  - component: {fileID: 1365186528}
+  - component: {fileID: 1365186527}
+  m_Layer: 5
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1365186526
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365186525}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 767529719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 13.400024, y: -0.5}
+  m_SizeDelta: {x: -36.8, y: -3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1365186527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365186525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Find the key
+--- !u!222 &1365186528
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365186525}
+  m_CullTransparentMesh: 1
 --- !u!1 &1369637030
 GameObject:
   m_ObjectHideFlags: 0
@@ -11676,7 +12660,7 @@ GameObject:
   - component: {fileID: 1369637034}
   - component: {fileID: 1369637033}
   - component: {fileID: 1369637032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11713,6 +12697,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1369637033
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11806,7 +12791,7 @@ GameObject:
   - component: {fileID: 1382688146}
   - component: {fileID: 1382688145}
   - component: {fileID: 1382688144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11843,6 +12828,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1382688145
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11936,7 +12922,7 @@ GameObject:
   - component: {fileID: 1401785480}
   - component: {fileID: 1401785479}
   - component: {fileID: 1401785478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11973,6 +12959,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1401785479
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12066,7 +13053,7 @@ GameObject:
   - component: {fileID: 1429881191}
   - component: {fileID: 1429881190}
   - component: {fileID: 1429881189}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12103,6 +13090,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1429881190
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12196,7 +13184,7 @@ GameObject:
   - component: {fileID: 1431243608}
   - component: {fileID: 1431243607}
   - component: {fileID: 1431243606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12233,6 +13221,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1431243607
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12326,7 +13315,7 @@ GameObject:
   - component: {fileID: 1452421725}
   - component: {fileID: 1452421724}
   - component: {fileID: 1452421723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12363,6 +13352,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1452421724
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12456,7 +13446,7 @@ GameObject:
   - component: {fileID: 1524364190}
   - component: {fileID: 1524364189}
   - component: {fileID: 1524364188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12493,6 +13483,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1524364189
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12586,7 +13577,7 @@ GameObject:
   - component: {fileID: 1543334764}
   - component: {fileID: 1543334763}
   - component: {fileID: 1543334762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12623,6 +13614,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1543334763
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12716,7 +13708,7 @@ GameObject:
   - component: {fileID: 1543851220}
   - component: {fileID: 1543851219}
   - component: {fileID: 1543851218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12753,6 +13745,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1543851219
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12833,133 +13826,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543851216}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1576256196
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1576256198}
-  - component: {fileID: 1576256197}
-  - component: {fileID: 1576256199}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1576256197
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576256196}
-  m_Enabled: 1
-  serializedVersion: 12
-  m_Type: 1
-  m_Color: {r: 0.8396226, g: 0.806683, b: 0.7168476, a: 1}
-  m_Intensity: 0.01
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize2D: {x: 0.5, y: 0.5}
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ForceVisible: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_LightUnit: 1
-  m_LuxAtDistance: 1
-  m_EnableSpotReflector: 1
---- !u!4 &1576256198
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576256196}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1576256199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576256196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_CustomShadowLayers: 0
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
-  m_RenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_ShadowRenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_Version: 4
-  m_LightLayerMask: 1
-  m_ShadowLayerMask: 1
-  m_RenderingLayers: 1
-  m_ShadowRenderingLayers: 1
 --- !u!1 &1577492644
 GameObject:
   m_ObjectHideFlags: 0
@@ -12973,7 +13839,7 @@ GameObject:
   - component: {fileID: 1577492648}
   - component: {fileID: 1577492647}
   - component: {fileID: 1577492646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13010,6 +13876,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1577492647
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13103,7 +13970,7 @@ GameObject:
   - component: {fileID: 1597545494}
   - component: {fileID: 1597545493}
   - component: {fileID: 1597545492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13140,6 +14007,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1597545493
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13233,7 +14101,7 @@ GameObject:
   - component: {fileID: 1598022844}
   - component: {fileID: 1598022843}
   - component: {fileID: 1598022842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13270,6 +14138,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1598022843
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13363,7 +14232,7 @@ GameObject:
   - component: {fileID: 1604667731}
   - component: {fileID: 1604667730}
   - component: {fileID: 1604667729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13400,6 +14269,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1604667730
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13493,7 +14363,7 @@ GameObject:
   - component: {fileID: 1620251852}
   - component: {fileID: 1620251851}
   - component: {fileID: 1620251850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13530,6 +14400,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1620251851
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13623,7 +14494,7 @@ GameObject:
   - component: {fileID: 1625930363}
   - component: {fileID: 1625930362}
   - component: {fileID: 1625930361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13660,6 +14531,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1625930362
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13753,7 +14625,7 @@ GameObject:
   - component: {fileID: 1639580129}
   - component: {fileID: 1639580128}
   - component: {fileID: 1639580127}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13790,6 +14662,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1639580128
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13883,7 +14756,7 @@ GameObject:
   - component: {fileID: 1649654807}
   - component: {fileID: 1649654806}
   - component: {fileID: 1649654805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13920,6 +14793,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1649654806
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14013,7 +14887,7 @@ GameObject:
   - component: {fileID: 1678359047}
   - component: {fileID: 1678359046}
   - component: {fileID: 1678359045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14050,6 +14924,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1678359046
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14280,7 +15155,7 @@ GameObject:
   - component: {fileID: 1680652414}
   - component: {fileID: 1680652413}
   - component: {fileID: 1680652412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14317,6 +15192,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1680652413
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14446,7 +15322,7 @@ GameObject:
   - component: {fileID: 1731619956}
   - component: {fileID: 1731619955}
   - component: {fileID: 1731619954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14483,6 +15359,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1731619955
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14651,7 +15528,7 @@ GameObject:
   - component: {fileID: 1745709481}
   - component: {fileID: 1745709480}
   - component: {fileID: 1745709479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14688,6 +15565,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1745709480
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14781,7 +15659,7 @@ GameObject:
   - component: {fileID: 1764010635}
   - component: {fileID: 1764010634}
   - component: {fileID: 1764010633}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14818,6 +15696,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1764010634
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14911,7 +15790,7 @@ GameObject:
   - component: {fileID: 1775095194}
   - component: {fileID: 1775095193}
   - component: {fileID: 1775095192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14948,6 +15827,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1775095193
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15041,7 +15921,7 @@ GameObject:
   - component: {fileID: 1776068128}
   - component: {fileID: 1776068127}
   - component: {fileID: 1776068126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15078,6 +15958,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1776068127
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15206,7 +16087,7 @@ GameObject:
   - component: {fileID: 1781912521}
   - component: {fileID: 1781912520}
   - component: {fileID: 1781912519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15243,6 +16124,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1781912520
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15336,7 +16218,7 @@ GameObject:
   - component: {fileID: 1787740495}
   - component: {fileID: 1787740494}
   - component: {fileID: 1787740493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15373,6 +16255,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1787740494
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15466,7 +16349,7 @@ GameObject:
   - component: {fileID: 1791845252}
   - component: {fileID: 1791845251}
   - component: {fileID: 1791845250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15503,6 +16386,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1791845251
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15715,7 +16599,7 @@ GameObject:
   - component: {fileID: 1854045120}
   - component: {fileID: 1854045119}
   - component: {fileID: 1854045118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15752,6 +16636,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1854045119
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15982,7 +16867,7 @@ GameObject:
   - component: {fileID: 1899078031}
   - component: {fileID: 1899078030}
   - component: {fileID: 1899078029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16019,6 +16904,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1899078030
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16112,7 +16998,7 @@ GameObject:
   - component: {fileID: 1946041678}
   - component: {fileID: 1946041677}
   - component: {fileID: 1946041676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16149,6 +17035,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1946041677
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16242,7 +17129,7 @@ GameObject:
   - component: {fileID: 1947376371}
   - component: {fileID: 1947376370}
   - component: {fileID: 1947376369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16279,6 +17166,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1947376370
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16457,7 +17345,7 @@ GameObject:
   - component: {fileID: 1975302773}
   - component: {fileID: 1975302772}
   - component: {fileID: 1975302771}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16494,6 +17382,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1975302772
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16587,7 +17476,7 @@ GameObject:
   - component: {fileID: 1981517925}
   - component: {fileID: 1981517924}
   - component: {fileID: 1981517923}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16624,6 +17513,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &1981517924
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16830,7 +17720,7 @@ GameObject:
   - component: {fileID: 2013375883}
   - component: {fileID: 2013375882}
   - component: {fileID: 2013375881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16867,6 +17757,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2013375882
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16960,7 +17851,7 @@ GameObject:
   - component: {fileID: 2039506755}
   - component: {fileID: 2039506754}
   - component: {fileID: 2039506753}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16997,6 +17888,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2039506754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17090,7 +17982,7 @@ GameObject:
   - component: {fileID: 2048657121}
   - component: {fileID: 2048657120}
   - component: {fileID: 2048657119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17127,6 +18019,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2048657120
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17220,7 +18113,7 @@ GameObject:
   - component: {fileID: 2066419108}
   - component: {fileID: 2066419107}
   - component: {fileID: 2066419106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17257,6 +18150,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2066419107
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17350,7 +18244,7 @@ GameObject:
   - component: {fileID: 2071256097}
   - component: {fileID: 2071256096}
   - component: {fileID: 2071256095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17387,6 +18281,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2071256096
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17480,7 +18375,7 @@ GameObject:
   - component: {fileID: 2075478116}
   - component: {fileID: 2075478115}
   - component: {fileID: 2075478114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17517,6 +18412,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2075478115
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17641,7 +18537,7 @@ GameObject:
   - component: {fileID: 2087105466}
   - component: {fileID: 2087105465}
   - component: {fileID: 2087105464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17678,6 +18574,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2087105465
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17771,7 +18668,7 @@ GameObject:
   - component: {fileID: 2094420456}
   - component: {fileID: 2094420455}
   - component: {fileID: 2094420454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17808,6 +18705,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2094420455
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17901,7 +18799,7 @@ GameObject:
   - component: {fileID: 2096629253}
   - component: {fileID: 2096629252}
   - component: {fileID: 2096629251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17938,6 +18836,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2096629252
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18031,7 +18930,7 @@ GameObject:
   - component: {fileID: 2097687305}
   - component: {fileID: 2097687304}
   - component: {fileID: 2097687303}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18068,6 +18967,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2097687304
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18161,7 +19061,7 @@ GameObject:
   - component: {fileID: 2104955454}
   - component: {fileID: 2104955453}
   - component: {fileID: 2104955452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18198,6 +19098,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2104955453
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18291,7 +19192,7 @@ GameObject:
   - component: {fileID: 2110110038}
   - component: {fileID: 2110110037}
   - component: {fileID: 2110110036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18328,6 +19229,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2110110037
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18408,6 +19310,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110110034}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2117430744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117430745}
+  - component: {fileID: 2117430747}
+  - component: {fileID: 2117430746}
+  m_Layer: 5
+  m_Name: Checkmark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2117430745
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117430744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 357586535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 28, y: 28}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2117430746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117430744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2117430747
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117430744}
+  m_CullTransparentMesh: 1
 --- !u!1 &2126994613
 GameObject:
   m_ObjectHideFlags: 0
@@ -18421,7 +19398,7 @@ GameObject:
   - component: {fileID: 2126994617}
   - component: {fileID: 2126994616}
   - component: {fileID: 2126994615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18458,6 +19435,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2126994616
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18551,7 +19529,7 @@ GameObject:
   - component: {fileID: 2132711795}
   - component: {fileID: 2132711794}
   - component: {fileID: 2132711793}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18588,6 +19566,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2132711794
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18681,7 +19660,7 @@ GameObject:
   - component: {fileID: 2140500710}
   - component: {fileID: 2140500709}
   - component: {fileID: 2140500708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18718,6 +19697,7 @@ MonoBehaviour:
   rotationSpeed: 100
   floatSpeed: 3
   floatAmplitude: 0.1
+  Key: 
 --- !u!136 &2140500709
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18919,6 +19899,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5455446547635601029, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748404995568250292, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748404995568250292, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748404995568250292, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748404995568250292, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 375
+      objectReference: {fileID: 0}
     - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: runSpeed
       value: 7
@@ -18927,6 +19927,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 1130340584}
     - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: sprintPrice
       value: 0.15
@@ -18951,6 +19955,10 @@ PrefabInstance:
       propertyPath: FlashlightSlider
       value: 
       objectReference: {fileID: 1101432782}
+    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: FlashCostReadyImage
+      value: 
+      objectReference: {fileID: 737560831}
     - target: {fileID: 9060119922029283879, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.84
@@ -18993,7 +20001,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4624306675900259197, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1130340582}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
 --- !u!4 &5924828534527728427 stripped
@@ -19021,7 +20032,6 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1576256198}
   - {fileID: 303523153}
   - {fileID: 759597036}
   - {fileID: 5924828534527728426}
