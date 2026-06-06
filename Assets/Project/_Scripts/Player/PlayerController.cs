@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public Transform BatteryPool;
+    public Enemy.Biha_Enemy Enemy;
     
     [Header("Movement Settings")]
     public float moveSpeed = 4.0f;
@@ -362,21 +363,17 @@ public class PlayerController : MonoBehaviour
 
         while (elapsed < strobeDuration)
         {
-            if (flashlight != null)
-            {
-                flashlight.enabled = lightState;
-            }
+            flashlight.enabled = lightState;
 
             lightState = !lightState;
             yield return new WaitForSeconds(flashInterval);
             elapsed += flashInterval;
         }
 
-        if (flashlight != null)
-        {
-            flashlight.enabled = true;
-            flashlight.intensity = originalIntensity;
-        }
+        Enemy.ToBunishment();
+        
+        flashlight.enabled = true;
+        flashlight.intensity = originalIntensity;
 
         isStrobeAttacking = false;
     }

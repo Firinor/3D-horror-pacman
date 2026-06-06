@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 namespace Enemy
 {
     public class Biha_Enemy : MonoBehaviour
     {
-        [FormerlySerializedAs("player")] public Transform Target;
+        public Transform Target;
+        
         public NavMeshAgent NavMeshAgent;
         
         public List<Transform> patrolPoitns;
@@ -61,6 +61,7 @@ namespace Enemy
         {
             NavMeshAgent.speed = patrolSpeed;
             behaviour = allBehaviours[behaviours.Banishment];
+            behaviour.Initialize();
         }
 
         public void ToWarning()
@@ -88,7 +89,7 @@ namespace Enemy
         
         void Update()
         {
-            amogusTimer -= Time.deltaTime;
+            /*amogusTimer -= Time.deltaTime;
             if (amogusTimer < 0)
             {
                 amogusTimer = amogusTime;
@@ -96,7 +97,7 @@ namespace Enemy
                 newPoint.SetParent(patrolParent);
                 newPoint.position = Target.position;
                 patrolPoitns.Add(newPoint);
-            }
+            }*/
 
             behaviour.Update();
         }
@@ -183,12 +184,33 @@ namespace Enemy
         
         public override void Initialize()
         {
-            
+            Main.NavMeshAgent.Warp(GetFarPoint());
         }
-        
+
+        private Vector3 GetFarPoint()
+        {
+            Vector3 result = new();
+            float maxDistance = 0;
+            
+            for (int i = 0; i < 4; i++)//only first 4 patrol points
+            {
+                float distance = Vector3.Distance(Main.Target.position, Main.patrolPoitns[i].position);
+                
+                if(distance <= maxDistance)
+                    continue;
+
+                maxDistance = distance;
+                result = Main.patrolPoitns[i].position;
+            }
+
+            Debug.Log("NewPoint: " + result + " maxDistance: " + maxDistance);
+            return result;
+        }
+
+
         public override void Update()
         {
-
+            Main.ToPatrol();
         }
     }
 }
