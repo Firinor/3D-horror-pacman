@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7004418416351772218}
   - component: {fileID: 4805396412183057234}
+  - component: {fileID: 1170271142777306405}
   - component: {fileID: 3644063019020955623}
   - component: {fileID: 8726826959224458846}
   m_Layer: 0
@@ -59,7 +60,7 @@ MonoBehaviour:
   patrolParent: {fileID: 0}
   patrolPointIndex: 0
   behaviourMat: {fileID: 2100000, guid: 726126407d1e0984d821a3616bbe35cb, type: 2}
-  Head: {fileID: 4266617398125271354}
+  Head: {fileID: 2757636058881846542}
   Vision: {fileID: 5914055612184389292}
   amogusTime: 180
   amogusTimer: 0
@@ -71,6 +72,29 @@ MonoBehaviour:
   runTimer: 0
   patrolSpeed: 3
   runSpeed: 10
+--- !u!136 &1170271142777306405
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7599944652534971819}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &3644063019020955623
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -106,7 +130,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f036edcdf8460504f99e5a76f9697b7e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -409,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.61497355
+      value: -0.09845133
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalRotation.x
@@ -417,11 +441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.78854775
+      value: -0.99514186
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -429,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -104.1
+      value: -191.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -438,6 +462,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_Name
       value: monster01_recovered02_textured01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215601351758751398, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4504072896518711619, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_LocalPosition.y
@@ -450,6 +478,10 @@ PrefabInstance:
     - target: {fileID: 4986211426850323989, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034143615108249629, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: 7c3c2f086edcc644e89c2bc96eb32067, type: 3}

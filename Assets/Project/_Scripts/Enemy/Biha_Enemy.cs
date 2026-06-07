@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -33,7 +34,9 @@ namespace Enemy
         
         public float patrolSpeed = 3f;
         public float runSpeed = 5f;
-
+        
+        public event Action OnPlayerCach;
+        
         private EnemyBehaviour behaviour;
 
         private Dictionary<behaviours, EnemyBehaviour> allBehaviours;
@@ -55,6 +58,19 @@ namespace Enemy
             };
 
             ToPatrol();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("+");
+            if(!other.CompareTag("Player"))
+                return;
+
+            NavMeshAgent.isStopped = true;
+            behaviour = allBehaviours[behaviours.Warning];
+            behaviour.Initialize();
+            Target.GetComponent<PlayerController>().ToParalyze();
+            OnPlayerCach?.Invoke();
         }
 
         public void ToBunishment()
@@ -203,7 +219,7 @@ namespace Enemy
                 result = Main.patrolPoitns[i].position;
             }
 
-            Debug.Log("NewPoint: " + result + " maxDistance: " + maxDistance);
+            //Debug.Log("NewPoint: " + result + " maxDistance: " + maxDistance);
             return result;
         }
 

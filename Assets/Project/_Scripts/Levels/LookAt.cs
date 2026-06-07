@@ -3,6 +3,11 @@ using UnityEngine;
 public class LookAt : MonoBehaviour
 {
     public Transform target;
+
+    public void Initialize(Transform target)
+    {
+        this.target = target;
+    }
     
     void Update()
     {

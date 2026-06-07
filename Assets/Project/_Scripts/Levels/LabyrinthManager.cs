@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using Enemy;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class LabyrinthManager : MonoBehaviour
 {
     public PlayerController Player;
     public Transform BatteryPool;
+    public Biha_Enemy Enemy;
 
     public string Prefix;
     
@@ -18,16 +20,24 @@ public class LabyrinthManager : MonoBehaviour
     
     public TextMeshProUGUI BatteryCountText;
     public TextMeshProUGUI MessageText;
-
+    public TextMeshProUGUI EndScreenText;
+    public GameObject EndScreen;
+    public float EndScreenTimer = 4f;
+    
     public Transform[] spawnPoints;
 
     public GameObject KeyPrefab;
     public GameObject PortalPrefab;
     
+    private int batteryCount;
+    
     private void Awake()
     {
-        Player.OnBatteryPick += RefreshBatteryCountText;
+        batteryCount = BatteryPool.childCount;
+        
+        Player.OnBatteryPick += RefreshBatteryCount;
         Player.OnKeyPick += SpawnPortal;
+        Enemy.OnPlayerCach += ShowLoseScreen;
         RefreshBatteryCountText();
     }
 
@@ -38,22 +48,56 @@ public class LabyrinthManager : MonoBehaviour
         StartCoroutine(ShowPortalMessage());
         Vector3 spawnPoint = GetRandomSpawnPoitn();
             
-        Instantiate(PortalPrefab, spawnPoint, Quaternion.identity, BatteryPool);
+        var portal = Instantiate(PortalPrefab, spawnPoint, Quaternion.identity, BatteryPool);
+        portal.GetComponent<LookAt>()
+            .Initialize(Player.transform);
+        portal.GetComponent<WinTrigger>()
+            .OnPlayerEnter += ShowWinScreen;
+    }
+
+    private void ShowWinScreen()
+    {
+        Enemy.enabled = false;
+        PortalToggle.isOn = true;
+        Player.ToParalyze();
+        EndScreenText.text = "You WIN!";
+        StartCoroutine(DelayBeforeEndScreen());
+    }
+    private void ShowLoseScreen()
+    {
+        EndScreenText.text = "You LOSE!";
+        StartCoroutine(DelayBeforeEndScreen());
+    }
+
+    private IEnumerator DelayBeforeEndScreen()
+    {
+        yield return new WaitForSeconds(EndScreenTimer);
+        EndScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    
+    private void RefreshBatteryCount()
+    {
+        batteryCount--;
+        
+        RefreshBatteryCountText();
+        
+        if (batteryCount > 0) 
+            return;
+        
+        BatteryCountText.gameObject.SetActive(false);
+        BatteryToggle.isOn = true;
+        KeyToggle.gameObject.SetActive(true);
+        StartCoroutine(ShowKeyMessage());
+        Vector3 spawnPoint = GetRandomSpawnPoitn();
+            
+        Instantiate(KeyPrefab, spawnPoint + KeyPrefab.transform.position, Quaternion.identity, BatteryPool);
     }
 
     private void RefreshBatteryCountText()
     {
-        BatteryCountText.text = Prefix + (BatteryPool.childCount-1);
-
-        if (BatteryPool.childCount <= 1)
-        {
-            BatteryToggle.isOn = true;
-            KeyToggle.gameObject.SetActive(true);
-            StartCoroutine(ShowKeyMessage());
-            Vector3 spawnPoint = GetRandomSpawnPoitn();
-            
-            Instantiate(KeyPrefab, spawnPoint, Quaternion.identity, BatteryPool);
-        }
+        BatteryCountText.text = Prefix + batteryCount;
     }
 
     private Vector3 GetRandomSpawnPoitn()
@@ -90,5 +134,6 @@ public class LabyrinthManager : MonoBehaviour
     {
         Player.OnBatteryPick -= RefreshBatteryCountText;
         Player.OnKeyPick -= SpawnPortal;
+        Enemy.OnPlayerCach -= ShowLoseScreen;
     }
 }

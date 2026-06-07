@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [Header("Flashlight Settings")]
     public Light flashlight;
     public float flashlightAngle = 120;
+    public float flashlightFocusSpeed = 3f;
     public float maxEnergy = 100f;
     public float flashCost = 50f;
     public Image FlashCostReadyImage;
@@ -80,11 +82,24 @@ public class PlayerController : MonoBehaviour
 
     public event Action OnBatteryPick;
     public event Action OnKeyPick;
-    public event Action OnPortalPick;
     
     //View
     public Slider StaminaSlider;
     public Slider FlashlightSlider;
+
+    private bool isCanMove = true;
+    private PlayerInputHolder input;
+    private InputActionAsset action;
+    private InputAction MoveAction;
+    private InputAction SprintAction;
+    
+    private struct PlayerInputHolder
+    {
+        public Vector2 move;
+        public Vector2 look;
+        public bool fire;
+        public bool sprint;
+    }
     
     void Start()
     {
@@ -106,16 +121,50 @@ public class PlayerController : MonoBehaviour
         {
             handOriginPos = handTransform.localPosition;
         }
+
+        InputSubscribe();
+    }
+
+    private void InputSubscribe()
+    {
+        action = InputSystem.actions;
+        //EnhancedTouchSupport.Enable();
+        action.FindAction("Look").performed += LookInput;
+        action.FindAction("Attack").performed += AttackInput;
+        MoveAction = action.FindAction("Move");
+        SprintAction = action.FindAction("Sprint");
+    }
+
+    private void AttackInput(InputAction.CallbackContext obj)
+    {
+        input.fire = obj.ReadValue<float>() > 0;
+    }
+    
+    private void LookInput(InputAction.CallbackContext obj)
+    {
+        input.look = obj.ReadValue<Vector2>() * mouseSensitivity;
     }
 
     void Update()
     {
+        if (isCanMove)
+        {
+            input.move = MoveAction.ReadValue<Vector2>();
+            input.sprint = SprintAction.ReadValue<float>() > 0 
+                && input.move.magnitude > 0f;
+        }
+        
         HandleMouseLook();
         HandleFlashlight();
         HandleStamina();
         HandleMovement();
         HandleGameplayMechanics();
         HandleHandAnimations();
+
+        input.sprint = false;
+        input.fire = false;
+        input.move = Vector2.zero;
+        input.look = Vector2.zero;
     }
 
     private void HandleFlashlight()
@@ -129,8 +178,8 @@ public class PlayerController : MonoBehaviour
         float targetAngle = flashlightAngle / 4;
         float deltaIn = targetAngle * factor;
         float deltaOut = targetAngle * 3 * factor;
-        flashlight.innerSpotAngle = Mathf.Lerp(flashlight.innerSpotAngle, targetAngle - deltaIn, Time.deltaTime);
-        flashlight.spotAngle = Mathf.Lerp(flashlight.spotAngle, targetAngle + deltaOut, Time.deltaTime);
+        flashlight.innerSpotAngle = Mathf.Lerp(flashlight.innerSpotAngle, targetAngle - deltaIn, Time.deltaTime * flashlightFocusSpeed);
+        flashlight.spotAngle = Mathf.Lerp(flashlight.spotAngle, targetAngle + deltaOut, Time.deltaTime * flashlightFocusSpeed);
     }
 
     private Vector3 GetNearestTarget()
@@ -154,9 +203,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleStamina()
     {
-        bool sprint = Input.GetButton("Jump");
-
-        if (sprint)
+        if (input.sprint && StaminaSlider.value > 0)
         {
             sprintRecoveryTimer = sprintRecoveryDelay;
             StaminaSlider.value -= sprintPrice * Time.deltaTime;
@@ -168,24 +215,13 @@ public class PlayerController : MonoBehaviour
         
         if (sprintRecoveryTimer <= 0)
             StaminaSlider.value += sprintRegen * Time.deltaTime;
-        
-        
     }
 
     private void HandleMouseLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        transform.Rotate(Vector3.up * input.look.x);
         
-        //float gamepadX = Input.GetAxis("Gamepad X") * gamepadSensitivity * Time.deltaTime;
-        //float gamepadY = Input.GetAxis("Gamepad Y") * gamepadSensitivity * Time.deltaTime;
-
-        float totalX = mouseX;// + gamepadX;
-        float totalY = mouseY;// + gamepadY;
-        
-        transform.Rotate(Vector3.up * totalX);
-        
-        verticalRotation -= totalY;
+        verticalRotation -= input.look.y;
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
 
         if (cameraTransform != null)
@@ -196,11 +232,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
-        bool sprint = Input.GetButton("Jump");
-        
-        Vector3 move = transform.right * moveX + transform.forward * moveZ;
+        Vector3 move = transform.right * input.move.x + transform.forward * input.move.y;
 
         if (characterController.isGrounded)
         {
@@ -215,7 +247,7 @@ public class PlayerController : MonoBehaviour
 
         float speed = moveSpeed;
         
-        if (sprint && StaminaSlider.value > 0)
+        if (input.sprint && StaminaSlider.value > 0)
         {
             speed = runSpeed;
         }
@@ -238,7 +270,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Fire1") 
+        if (input.fire
             && FlashlightSlider.value >= flashCost
             && Time.time >= nextAttackTime 
             && !isStrobeAttacking 
@@ -302,8 +334,8 @@ public class PlayerController : MonoBehaviour
     {
         if (handTransform == null) return;
 
-        float totalInputX = Input.GetAxis("Mouse X");// + (Input.GetAxis("Gamepad X") * 5f * Time.deltaTime);
-        float totalInputY = Input.GetAxis("Mouse Y");// + (Input.GetAxis("Gamepad Y") * 5f * Time.deltaTime);
+        float totalInputX = input.move.x;
+        float totalInputY = input.move.y;
 
         float movementX = -totalInputX * swayAmount;
         float movementY = -totalInputY * swayAmount;
@@ -376,5 +408,16 @@ public class PlayerController : MonoBehaviour
         flashlight.intensity = originalIntensity;
 
         isStrobeAttacking = false;
+    }
+    
+    public void ToParalyze()
+    {
+        isCanMove = false;
+    }
+
+    private void OnDestroy()
+    {
+        action.FindAction("Look").performed -= LookInput;
+        action.FindAction("Attack").performed -= AttackInput;
     }
 }
