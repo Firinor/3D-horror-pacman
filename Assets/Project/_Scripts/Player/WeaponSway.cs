@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponSway : MonoBehaviour
 {
@@ -8,27 +9,40 @@ public class WeaponSway : MonoBehaviour
     public float swaySmooth = 6f;
 
     private Vector3 startPosition;
+    
+    private InputActionAsset action;
+    private InputAction MoveAction;
+
+    private Vector2 mouseLook;
 
     private void Start()
     {
-        // Запоминаем стартовую позицию (для пустышки это будет 0,0,0)
+        action = InputSystem.actions;
+        action.FindAction("Look").performed += LookInput;
+        
         startPosition = transform.localPosition;
     }
 
+    private void LookInput(InputAction.CallbackContext obj)
+    {
+        mouseLook = obj.ReadValue<Vector2>();
+    }
+    
     private void Update()
     {
-        // Получаем движение мыши
-        float mouseX = -Input.GetAxis("Mouse X") * swayAmount;
-        float mouseY = -Input.GetAxis("Mouse Y") * swayAmount;
-
-        // Ограничиваем, чтобы рука не улетала слишком далеко за экран
+        float mouseX = -mouseLook.x * swayAmount;
+        float mouseY = -mouseLook.y * swayAmount;
+        
         mouseX = Mathf.Clamp(mouseX, -maxSwayAmount, maxSwayAmount);
         mouseY = Mathf.Clamp(mouseY, -maxSwayAmount, maxSwayAmount);
-
-        // Рассчитываем новую позицию покачивания
+        
         Vector3 targetPosition = new Vector3(mouseX, mouseY, 0);
-
-        // Плавно двигаем объект
+        
         transform.localPosition = Vector3.Lerp(transform.localPosition, startPosition + targetPosition, Time.deltaTime * swaySmooth);
+    }
+
+    private void OnDestroy()
+    {
+        action.FindAction("Look").performed -= LookInput;
     }
 }
