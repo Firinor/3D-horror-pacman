@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour
    private AudioConfig config;
    [SerializeField]
    private List<AudioSource> audioPool;
+   [SerializeField]
+   private List<AudioSource> playerAudioPool;
    private int soundIndex;
 
    private const float buttonClickDelay = .2f;
@@ -46,9 +48,9 @@ public class SoundManager : MonoBehaviour
    {
       Play(position, config.Telleport, isPriority: true);
    }
-   public void PlayFlashlightAttack(Vector3 position = default)
+   public void PlayFlashlightAttack()
    {
-      Play(position, config.FlashlightAttack);
+      PlayerPlay(config.FlashlightAttack);
    }
    
    public void PlayWin(Vector3 position = default)
@@ -123,7 +125,18 @@ public class SoundManager : MonoBehaviour
 
       StartCoroutine(DisableAudioSource(source));
    }
+   private void PlayerPlay(ClipSettings clipData, bool isPriority = false)
+   {
+      AudioSource source = playerAudioPool.FirstOrDefault(a => !a.gameObject.activeSelf);
 
+      source!.gameObject.SetActive(true);
+      source.pitch = 1 + Random.Range(-0.05f, 0.05f);
+      source.volume = clipData.Volume;
+      
+      source.PlayOneShot(clipData.Clip);
+
+      StartCoroutine(DisableAudioSource(source));
+   }
    private IEnumerator DisableAudioSource(AudioSource source)
    {
       while (source.isPlaying)

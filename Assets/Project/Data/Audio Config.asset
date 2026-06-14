@@ -15,10 +15,23 @@ MonoBehaviour:
   ButtonClick:
     Clips: []
     Volume: 1
+  Steps:
+    Clips:
+    - {fileID: 8300000, guid: 51275d7580fef9845a0048ca142e19ea, type: 3}
+    - {fileID: 8300000, guid: bad73a53ed5d00b478a5fe05697b2309, type: 3}
+    - {fileID: 8300000, guid: cde1353969763754da0489d807d777e8, type: 3}
+    - {fileID: 8300000, guid: 97c414394fa6ef2488c84ae29d6535e7, type: 3}
+    Volume: 0.2
+  Hartbeat:
+    Clips: []
+    Volume: 0
+  HartbeatPanic:
+    Clips: []
+    Volume: 0
   BatteryCollect:
     Clips:
     - {fileID: 8300000, guid: 816a392b978ce244a8e238bc67a0eedd, type: 3}
-    Volume: 1
+    Volume: 0.3
   KeyCollect:
     Clips:
     - {fileID: 8300000, guid: 816a392b978ce244a8e238bc67a0eedd, type: 3}
@@ -28,7 +41,7 @@ MonoBehaviour:
     Volume: 1
   FlashlightAttack:
     Clips:
-    - {fileID: 8300000, guid: b35016d8487042f40858885c9d5885eb, type: 3}
+    - {fileID: 8300000, guid: 392412ce2e5bcb64fa7297bfaffd6e79, type: 3}
     Volume: 1
   Idle:
     Clips: []

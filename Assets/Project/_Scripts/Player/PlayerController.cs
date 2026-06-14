@@ -64,6 +64,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float kickUpForce = 0.05f;
     [SerializeField] private float returnSpeed = 10f;
     
+    [Header("Audio")]
+    public AudioSource hartbeat;
+    public AudioSource hartbeatPanic;
+    
     private CharacterController characterController;
     private float verticalRotation = 0f;
     private float verticalVelocity = 0f;
@@ -160,11 +164,17 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleGameplayMechanics();
         HandleHandAnimations();
+        HandleAudio();
 
         input.sprint = false;
         input.fire = false;
         input.move = Vector2.zero;
         input.look = Vector2.zero;
+    }
+
+    private void HandleAudio()
+    {
+        
     }
 
     private void HandleFlashlight()
@@ -327,6 +337,7 @@ public class PlayerController : MonoBehaviour
         
         FlashCostReadyImage.enabled = FlashlightSlider.value >= flashCost;
         
+        SoundManager.Instance.PlayBatteryCollect(transform.position);
         OnBatteryPick?.Invoke();
     }
 
@@ -388,6 +399,7 @@ public class PlayerController : MonoBehaviour
         isStrobeAttacking = true;
         nextAttackTime = Time.time + attackCooldown;
 
+        SoundManager.Instance.PlayFlashlightAttack();
         currentRecoilOffset = new Vector3(0f, kickUpForce, -kickBackForce);
 
         float elapsed = 0f;

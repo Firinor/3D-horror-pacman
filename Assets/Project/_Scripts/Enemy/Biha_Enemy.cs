@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -38,6 +39,7 @@ namespace Enemy
         public event Action OnPlayerCach;
         
         private EnemyBehaviour behaviour;
+        public bool IsAngry => behaviour is not Patrol; 
 
         private Dictionary<behaviours, EnemyBehaviour> allBehaviours;
 
@@ -92,7 +94,7 @@ namespace Enemy
 
         public void ToPatrol()
         {
-            Head.rotation = Quaternion.identity;
+            Head.localRotation = Quaternion.identity;
             
             NavMeshAgent.isStopped = false;
             
