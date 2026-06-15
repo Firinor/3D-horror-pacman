@@ -34,7 +34,7 @@ MonoBehaviour:
     Volume: 0.3
   KeyCollect:
     Clips:
-    - {fileID: 8300000, guid: 816a392b978ce244a8e238bc67a0eedd, type: 3}
+    - {fileID: 8300000, guid: ebef82638cd895149a32b8b6be8483fe, type: 3}
     Volume: 1
   Telleport:
     Clips: []
@@ -47,17 +47,20 @@ MonoBehaviour:
     Clips: []
     Volume: 1
   Warning:
-    Clips: []
+    Clips:
+    - {fileID: 8300000, guid: 168f7343ad9efe447a74b21ca0e6ec0b, type: 3}
     Volume: 1
   Run:
     Clips: []
     Volume: 1
   PlayerCatch:
-    Clips: []
+    Clips:
+    - {fileID: 8300000, guid: 37a72de5040c7344da667ab58d1d3c8f, type: 3}
     Volume: 1
   Win:
     Clips: []
     Volume: 1
   Lose:
-    Clips: []
+    Clips:
+    - {fileID: 8300000, guid: 37a72de5040c7344da667ab58d1d3c8f, type: 3}
     Volume: 1

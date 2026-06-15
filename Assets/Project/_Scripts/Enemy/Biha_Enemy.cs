@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,6 +19,9 @@ namespace Enemy
         
         public Transform Head;
         public EnemyVision Vision;
+        
+        [SerializeField]
+        private AudioSource AudioSource;
         
         public float amogusTime = 60f;
         public float amogusTimer;
@@ -64,7 +66,6 @@ namespace Enemy
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("+");
             if(!other.CompareTag("Player"))
                 return;
 
@@ -72,6 +73,8 @@ namespace Enemy
             behaviour = allBehaviours[behaviours.Warning];
             behaviour.Initialize();
             Target.GetComponent<PlayerController>().ToParalyze();
+            AudioSource.Stop();
+            SoundManager.Instance.PlayLose(Target.position);
             OnPlayerCach?.Invoke();
         }
 
@@ -87,6 +90,10 @@ namespace Enemy
             NavMeshAgent.isStopped = true;
             NavMeshAgent.speed = runSpeed;
             behaviour = allBehaviours[behaviours.Warning];
+            
+            AudioSource.Stop();
+            SoundManager.Instance.PlayWarning(transform.position);
+            
             behaviour.Initialize();
             
             behaviourMat.color = Color.red;
@@ -100,6 +107,9 @@ namespace Enemy
             
             NavMeshAgent.speed = patrolSpeed;
             behaviour = allBehaviours[behaviours.Patrol];
+            
+            AudioSource.Play();
+            
             behaviour.Initialize();
             
             behaviourMat.color = Color.green;

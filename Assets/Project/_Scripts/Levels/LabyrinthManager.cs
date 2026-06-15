@@ -53,6 +53,7 @@ public class LabyrinthManager : MonoBehaviour
             .Initialize(Player.transform);
         portal.GetComponent<WinTrigger>()
             .OnPlayerEnter += ShowWinScreen;
+        SoundManager.Instance.PlayKeyCollect(spawnPoint);
     }
 
     private void ShowWinScreen()
@@ -61,6 +62,7 @@ public class LabyrinthManager : MonoBehaviour
         PortalToggle.isOn = true;
         Player.ToParalyze();
         EndScreenText.text = "You WIN!";
+        SoundManager.Instance.PlayWin(Player.transform.position);
         StartCoroutine(DelayBeforeEndScreen());
     }
     private void ShowLoseScreen()
@@ -72,6 +74,7 @@ public class LabyrinthManager : MonoBehaviour
     private IEnumerator DelayBeforeEndScreen()
     {
         yield return new WaitForSeconds(EndScreenTimer);
+        Enemy.gameObject.SetActive(false);
         EndScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

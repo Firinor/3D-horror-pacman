@@ -63,8 +63,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float kickBackForce = 0.15f;
     [SerializeField] private float kickUpForce = 0.05f;
     [SerializeField] private float returnSpeed = 10f;
-    
-    [Header("Audio")]
+
+    [Header("Audio")] 
+    public float maxDistance;
+    public float minDistance;
     public AudioSource hartbeat;
     public AudioSource hartbeatPanic;
     
@@ -110,6 +112,7 @@ public class PlayerController : MonoBehaviour
         FlashlightSlider.maxValue = maxEnergy;
         FlashlightSlider.value = maxEnergy;
         FlashCostReadyImage.enabled = FlashlightSlider.value >= flashCost;
+        StaminaSlider.gameObject.SetActive(false);
         
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -156,12 +159,12 @@ public class PlayerController : MonoBehaviour
             input.move = MoveAction.ReadValue<Vector2>();
             input.sprint = SprintAction.ReadValue<float>() > 0 
                 && input.move.magnitude > 0f;
+            HandleMouseLook();
+            HandleMovement();
         }
         
-        HandleMouseLook();
         HandleFlashlight();
         HandleStamina();
-        HandleMovement();
         HandleGameplayMechanics();
         HandleHandAnimations();
         HandleAudio();
@@ -174,7 +177,22 @@ public class PlayerController : MonoBehaviour
 
     private void HandleAudio()
     {
-        
+        float distanceToEnemy = Vector3.Distance(transform.position, Enemy.transform.position);
+        float volume = 1f - (distanceToEnemy - minDistance) / (maxDistance - minDistance);
+        volume = Mathf.Clamp01(volume);
+        if (Enemy.IsAngry)
+        {
+            hartbeatPanic.gameObject.SetActive(true);
+            hartbeat.gameObject.SetActive(false);
+        }
+        else
+        {
+            hartbeatPanic.gameObject.SetActive(false);
+            hartbeat.gameObject.SetActive(true);
+        }
+
+        hartbeatPanic.volume = volume;
+        hartbeat.volume = volume;
     }
 
     private void HandleFlashlight()
@@ -257,7 +275,7 @@ public class PlayerController : MonoBehaviour
 
         float speed = moveSpeed;
         
-        if (input.sprint && StaminaSlider.value > 0)
+        if (StaminaSlider.IsActive() && input.sprint && StaminaSlider.value > 0)
         {
             speed = runSpeed;
         }
@@ -329,6 +347,7 @@ public class PlayerController : MonoBehaviour
 
     private void CollectKey()
     {
+        SoundManager.Instance.PlayBatteryCollect(transform.position);
         OnKeyPick?.Invoke();
     }
     private void CollectBattery()
