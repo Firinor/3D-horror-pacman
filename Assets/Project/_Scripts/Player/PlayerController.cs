@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour
     public float maxEnergy = 100f;
     public float flashCost = 50f;
     public Image FlashCostReadyImage;
+    public Image FlashHelperImage;
+    public Sprite KeySprite;
+    public Sprite PortalSprite;
+    public Color PortalSpriteColor;
     private float flashIntensityMultiplierTimer;
     
     [Header("Magnet Settings")]
@@ -208,6 +212,9 @@ public class PlayerController : MonoBehaviour
         float deltaOut = targetAngle * 3 * factor;
         flashlight.innerSpotAngle = Mathf.Lerp(flashlight.innerSpotAngle, targetAngle - deltaIn, Time.deltaTime * flashlightFocusSpeed);
         flashlight.spotAngle = Mathf.Lerp(flashlight.spotAngle, targetAngle + deltaOut, Time.deltaTime * flashlightFocusSpeed);
+
+        //Debug.Log(factor);
+        FlashHelperImage.color = new Color(PortalSpriteColor.r, PortalSpriteColor.g, PortalSpriteColor.b, 1 - factor*4);
     }
 
     private Vector3 GetNearestTarget()
@@ -360,6 +367,17 @@ public class PlayerController : MonoBehaviour
         OnBatteryPick?.Invoke();
     }
 
+    public void ToKeyHelpImage()
+    {
+        FlashHelperImage.sprite = KeySprite;
+    }
+    public void ToPortalHelpImage()
+    {
+        FlashHelperImage.sprite = PortalSprite;
+        FlashlightSlider.value = 0;
+        FlashlightSlider.gameObject.SetActive(false);
+        StaminaSlider.gameObject.SetActive(true);
+    }
     private void HandleHandAnimations()
     {
         if (handTransform == null) return;

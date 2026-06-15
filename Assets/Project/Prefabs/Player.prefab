@@ -571,7 +571,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1d9f7498f79d80c49a11bc66e41d6ad3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.001
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1134,6 +1134,10 @@ MonoBehaviour:
   maxEnergy: 100
   flashCost: 50
   FlashCostReadyImage: {fileID: 0}
+  FlashHelperImage: {fileID: 0}
+  KeySprite: {fileID: 21300000, guid: d0cfdf972970eb44d9e29fed0ef3fe68, type: 3}
+  PortalSprite: {fileID: 21300000, guid: 1ee7b8bd688577a4f9e254b0242e9b66, type: 3}
+  PortalSpriteColor: {r: 0, g: 0, b: 0, a: 0}
   magnetRadius: 1.5
   magnetSpeed: 8
   handTransform: {fileID: 2510067508430395347}
@@ -1156,6 +1160,10 @@ MonoBehaviour:
   kickBackForce: 0.15
   kickUpForce: 0.05
   returnSpeed: 10
+  maxDistance: 30
+  minDistance: 10
+  hartbeat: {fileID: 2087432409741184454}
+  hartbeatPanic: {fileID: 31519236849271569}
   StaminaSlider: {fileID: 0}
   FlashlightSlider: {fileID: 0}
 --- !u!1 &2971478297394309841
@@ -1511,7 +1519,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4100150036950245080, guid: 5441c02b1edfcf74c80d6bccdce57f65, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 1d9f7498f79d80c49a11bc66e41d6ad3, type: 3}
+  m_Resource: {fileID: 8300000, guid: 54b78ca1b02d3874a83e9179f72a94c1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.04
   m_Pitch: 1
@@ -1615,7 +1623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5625801222011221738
 Transform:
   m_ObjectHideFlags: 0

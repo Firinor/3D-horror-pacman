@@ -54,6 +54,8 @@ public class LabyrinthManager : MonoBehaviour
         portal.GetComponent<WinTrigger>()
             .OnPlayerEnter += ShowWinScreen;
         SoundManager.Instance.PlayKeyCollect(spawnPoint);
+        
+        Player.ToPortalHelpImage();
     }
 
     private void ShowWinScreen()
@@ -96,6 +98,7 @@ public class LabyrinthManager : MonoBehaviour
         Vector3 spawnPoint = GetRandomSpawnPoitn();
             
         Instantiate(KeyPrefab, spawnPoint + KeyPrefab.transform.position, Quaternion.identity, BatteryPool);
+        Player.ToKeyHelpImage();
     }
 
     private void RefreshBatteryCountText()
