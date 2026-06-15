@@ -58,7 +58,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 37a72de5040c7344da667ab58d1d3c8f, type: 3}
     Volume: 1
   Win:
-    Clips: []
+    Clips:
+    - {fileID: 8300000, guid: 58eaefef9d3901849b10e82dc0ce9ebf, type: 3}
     Volume: 1
   Lose:
     Clips:
