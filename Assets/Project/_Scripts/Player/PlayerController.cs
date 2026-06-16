@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     [Header("Mouse & Gamepad Look Settings")]
     public Transform cameraTransform;
     public float mouseSensitivity = 2.0f;
-    public float gamepadSensitivity = 150.0f;
     public float upDownRange = 89.0f;
 
     [Header("Flashlight Settings")]
@@ -33,7 +32,9 @@ public class PlayerController : MonoBehaviour
     public float flashlightFocusSpeed = 3f;
     public float maxEnergy = 100f;
     public float flashCost = 50f;
+    public bool IsSmartFlashlight;
     public Image FlashCostReadyImage;
+    public int BatteryHelpCount;
     public Image FlashHelperImage;
     public Sprite KeySprite;
     public Sprite PortalSprite;
@@ -96,10 +97,12 @@ public class PlayerController : MonoBehaviour
     //View
     public Slider StaminaSlider;
     public Slider FlashlightSlider;
-
+    
+    private bool isCanShoot = true;
     private bool isCanMove = true;
     private PlayerInputHolder input;
     private InputActionAsset action;
+    private InputAction LookAction;
     private InputAction MoveAction;
     private InputAction SprintAction;
     
@@ -140,8 +143,8 @@ public class PlayerController : MonoBehaviour
     {
         action = InputSystem.actions;
         //EnhancedTouchSupport.Enable();
-        action.FindAction("Look").performed += LookInput;
         action.FindAction("Attack").performed += AttackInput;
+        LookAction = action.FindAction("Look");
         MoveAction = action.FindAction("Move");
         SprintAction = action.FindAction("Sprint");
     }
@@ -150,16 +153,12 @@ public class PlayerController : MonoBehaviour
     {
         input.fire = obj.ReadValue<float>() > 0;
     }
-    
-    private void LookInput(InputAction.CallbackContext obj)
-    {
-        input.look = obj.ReadValue<Vector2>() * mouseSensitivity;
-    }
 
     void Update()
     {
         if (isCanMove)
         {
+            input.look = LookAction.ReadValue<Vector2>() * mouseSensitivity;
             input.move = MoveAction.ReadValue<Vector2>();
             input.sprint = SprintAction.ReadValue<float>() > 0 
                 && input.move.magnitude > 0f;
@@ -207,11 +206,14 @@ public class PlayerController : MonoBehaviour
         float angle = Vector3.Angle(cameraForward, directionToTarget);
         float factor = angle / 180f;
 
-        float targetAngle = flashlightAngle / 4;
-        float deltaIn = targetAngle * factor;
-        float deltaOut = targetAngle * 3 * factor;
-        flashlight.innerSpotAngle = Mathf.Lerp(flashlight.innerSpotAngle, targetAngle - deltaIn, Time.deltaTime * flashlightFocusSpeed);
-        flashlight.spotAngle = Mathf.Lerp(flashlight.spotAngle, targetAngle + deltaOut, Time.deltaTime * flashlightFocusSpeed);
+        if (IsSmartFlashlight)
+        {
+            float targetAngle = flashlightAngle / 4;
+            float deltaIn = targetAngle * factor;
+            float deltaOut = targetAngle * 3 * factor;
+            flashlight.innerSpotAngle = Mathf.Lerp(flashlight.innerSpotAngle, targetAngle - deltaIn, Time.deltaTime * flashlightFocusSpeed);
+            flashlight.spotAngle = Mathf.Lerp(flashlight.spotAngle, targetAngle + deltaOut, Time.deltaTime * flashlightFocusSpeed);
+        }
 
         //Debug.Log(factor);
         FlashHelperImage.color = new Color(PortalSpriteColor.r, PortalSpriteColor.g, PortalSpriteColor.b, 1 - factor*4);
@@ -305,7 +307,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (input.fire
+        if (input.fire 
+            && isCanShoot
             && FlashlightSlider.value >= flashCost
             && Time.time >= nextAttackTime 
             && !isStrobeAttacking 
@@ -367,6 +370,10 @@ public class PlayerController : MonoBehaviour
         OnBatteryPick?.Invoke();
     }
 
+    public void ToBatteryHelpImage()
+    {
+        FlashHelperImage.enabled = true;
+    }
     public void ToKeyHelpImage()
     {
         FlashHelperImage.sprite = KeySprite;
@@ -451,7 +458,8 @@ public class PlayerController : MonoBehaviour
             elapsed += flashInterval;
         }
 
-        Enemy.ToBunishment();
+        if(isCanShoot)
+            Enemy.ToBunishment();
         
         flashlight.enabled = true;
         flashlight.intensity = originalIntensity;
@@ -462,11 +470,11 @@ public class PlayerController : MonoBehaviour
     public void ToParalyze()
     {
         isCanMove = false;
+        isCanShoot = false;
     }
 
     private void OnDestroy()
     {
-        action.FindAction("Look").performed -= LookInput;
         action.FindAction("Attack").performed -= AttackInput;
     }
 }

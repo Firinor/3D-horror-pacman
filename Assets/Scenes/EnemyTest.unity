@@ -2092,11 +2092,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156806063}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &172570588 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2087432409741184454, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-  m_PrefabInstance: {fileID: 5924828534527728426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177636601
 GameObject:
   m_ObjectHideFlags: 0
@@ -6097,11 +6092,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507697707}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &509180162 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 31519236849271569, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-  m_PrefabInstance: {fileID: 5924828534527728426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &514263297
 GameObject:
   m_ObjectHideFlags: 0
@@ -13499,7 +13489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212670966}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -22321,54 +22311,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 31519236849271569, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 54b78ca1b02d3874a83e9179f72a94c1, type: 3}
-    - target: {fileID: 852068806160834076, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: m_Volume
-      value: 0.001
-      objectReference: {fileID: 0}
     - target: {fileID: 2383056483812426471, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455446547635601029, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: Enemy
       value: 
       objectReference: {fileID: 1051646929300876162}
     - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: hartbeat
-      value: 
-      objectReference: {fileID: 172570588}
-    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: BatteryPool
       value: 
       objectReference: {fileID: 1360871617}
-    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: maxDistance
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: minDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: PortalSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ee7b8bd688577a4f9e254b0242e9b66, type: 3}
     - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: StaminaSlider
       value: 
       objectReference: {fileID: 124849864}
     - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
-      propertyPath: hartbeatPanic
-      value: 
-      objectReference: {fileID: 509180162}
+      propertyPath: BatteryHelpCount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: FlashHelperImage
       value: 
@@ -22381,6 +22343,22 @@ PrefabInstance:
       propertyPath: FlashCostReadyImage
       value: 
       objectReference: {fileID: 737560831}
+    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: PortalSpriteColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: PortalSpriteColor.b
+      value: 0.06666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: PortalSpriteColor.g
+      value: 0.05490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320239246051388984, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
+      propertyPath: PortalSpriteColor.r
+      value: 0.47058824
+      objectReference: {fileID: 0}
     - target: {fileID: 9060119922029283879, guid: 41dbd93c2c39ae34ca1c077530804294, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.15

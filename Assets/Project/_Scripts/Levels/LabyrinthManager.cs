@@ -88,6 +88,9 @@ public class LabyrinthManager : MonoBehaviour
         
         RefreshBatteryCountText();
         
+        if(batteryCount <= Player.BatteryHelpCount)
+            Player.ToBatteryHelpImage();
+        
         if (batteryCount > 0) 
             return;
         

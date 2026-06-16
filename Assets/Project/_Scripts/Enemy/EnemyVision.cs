@@ -41,7 +41,7 @@ public class EnemyVision : MonoBehaviour
             return;
         
         Vector3 directionToTarget = (target.position - transform.position).normalized;
-        directionToTarget.y = 0;
+        directionToTarget.y = 0.1f;
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
         
         if (distanceToTarget <= viewRadius && Vector3.Angle(transform.forward, directionToTarget) < viewAngle / 2)
